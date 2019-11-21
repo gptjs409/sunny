@@ -10,32 +10,32 @@ public class Exam4 {
 		String retry = "";
 		char[] cno = new char[32];
 		
-		System.out.println("10Áø¼ö¸¦ ±â¼öº¯È¯ ÇÒ°Å¿¡¿ä");
+		System.out.println("10ì§„ìˆ˜ë¥¼ ê¸°ìˆ˜ë³€í™˜ í• ê±°ì—ìš”");
 		
 		do {
 			do {
-				System.out.print("º¯È¯ÇÏ·Á´Â À½ÀÌ ¾Æ´Ñ Á¤¼ö : ");
+				System.out.print("ë³€í™˜í•˜ë ¤ëŠ” ìŒì´ ì•„ë‹Œ ì •ìˆ˜ : ");
 				no = sc.nextInt();
 			} while (no < 0);
 			
 			do {
-				System.out.println("º¯È¯ÇÏ·Á´Â Áø¼ö (2 ~ 36) : ");
+				System.out.println("ë³€í™˜í•˜ë ¤ëŠ” ì§„ìˆ˜ (2 ~ 36) : ");
 				cd = sc.nextInt();
 			} while (cd < 2 || cd > 36);
 			
 			dno = cardConv(no, cd, cno);
 			
-			System.out.print(cd + "Áø¼ö·Î´Â ? ");
+			System.out.print(cd + "ì§„ìˆ˜ë¡œëŠ” ? ");
 			for (int i = 0; i < dno; i++)
 				System.out.print(cno[i]);
-			System.out.println(" ÀÔ´Ï´Ù.");
+			System.out.println(" ì…ë‹ˆë‹¤.");
 			
 			System.out.println("\n------------------------------");
-			System.out.println("°è»ê½ÄÀ» ÇÁ¸°Æ®ÇØº¼²²¿ä.");
+			System.out.println("ê³„ì‚°ì‹ì„ í”„ë¦°íŠ¸í•´ë³¼ê»˜ìš”.");
 			process(no, cd, cno);
 			System.out.println("------------------------------\n");
 			
-			System.out.println("ÇÑ ¹ø ´õ ÇÏ½Ã·Á¸é y¸¦ ´­·¯ÁÖ¼¼¿ä : ");
+			System.out.println("í•œ ë²ˆ ë” í•˜ì‹œë ¤ë©´ yë¥¼ ëˆŒëŸ¬ì£¼ì„¸ìš” : ");
 			retry = sc.next();
 		} while (retry.equals("y"));
 		
@@ -63,18 +63,18 @@ public class Exam4 {
 		int digits = 0, tmp = x;
 		String dchar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		
-		int cx = 0;   // ±â¼öÀÇ ÀÚ¸®¼ö
-		int cr = 0;   // Áø¹ıÀÇ ÀÚ¸®¼ö
-		int ctmp = 0; // ÀÚ¸®¼ö¸¦ ±¸ÇÏ±â À§ÇÑ ÀÓ½Ã°ª
+		int cx = 0;   // ê¸°ìˆ˜ì˜ ìë¦¬ìˆ˜
+		int cr = 0;   // ì§„ë²•ì˜ ìë¦¬ìˆ˜
+		int ctmp = 0; // ìë¦¬ìˆ˜ë¥¼ êµ¬í•˜ê¸° ìœ„í•œ ì„ì‹œê°’
 		
-		// ±â¼öÀÇ ÀÚ¸®¼ö¸¦ ±¸ÇØº¸ÀÚ.
+		// ê¸°ìˆ˜ì˜ ìë¦¬ìˆ˜ë¥¼ êµ¬í•´ë³´ì.
 		ctmp = x;
 		while (ctmp != 0) {
 			ctmp /= 10;
 			cx++;
 		}
 		
-		// Áø¹ıÀÇ ÀÚ¸®¼ö¸¦ ±¸ÇØº¸ÀÚ.
+		// ì§„ë²•ì˜ ìë¦¬ìˆ˜ë¥¼ êµ¬í•´ë³´ì.
 		ctmp = r;
 		while (ctmp != 0) {
 			ctmp /= 10;
@@ -86,10 +86,10 @@ public class Exam4 {
 			digits++;
 		}
 		
-		// 1ÁÙ
+		// 1ì¤„
 		System.out.println(r + "|     " + x);
 		
-		// 2ÁÙ
+		// 2ì¤„
 		for (int i = 0; i < cr; i++)
 			System.out.print("-");
 		System.out.print("+-----");
@@ -102,7 +102,7 @@ public class Exam4 {
 			d[i] = dchar.charAt(x % r);
 			x /= r;
 			
-			// ÇöÀç ±â¼ö°ª °è»ê
+			// í˜„ì¬ ê¸°ìˆ˜ê°’ ê³„ì‚°
 			int ncx = 0;
 			ctmp = x;
 			while (ctmp != 0) {
@@ -112,26 +112,26 @@ public class Exam4 {
 			
 			if (x == 0) {
 				ncx = 1;
-				// 1ÁÙ - Áø¹ı Ãâ·Â
+				// 1ì¤„ - ì§„ë²• ì¶œë ¥
 				System.out.print("       ");
 			} else {
-			    // 1ÁÙ - Áø¹ı Ãâ·Â
+			    // 1ì¤„ - ì§„ë²• ì¶œë ¥
 			    System.out.print(r + "|     ");
 			}
-			// 1ÁÙ - blank Ãâ·Â [¿ø·¡ ±â¼ö°ª - ÇöÀç ±â¼ö°ª ¸¸Å­)
+			// 1ì¤„ - blank ì¶œë ¥ [ì›ë˜ ê¸°ìˆ˜ê°’ - í˜„ì¬ ê¸°ìˆ˜ê°’ ë§Œí¼)
 			for (int j = 0; j < cx - ncx; j++)
 				System.out.print(" ");
 			
-			// 1ÁÙ - ±â¼öÀÜ¿©°ª Ãâ·Â
-			System.out.println(x + "  ¡¦ " + d[i]);
+			// 1ì¤„ - ê¸°ìˆ˜ì”ì—¬ê°’ ì¶œë ¥
+			System.out.println(x + "  â€¦ " + d[i]);
 			
 			if (x == 0) break;
 			
-			// 2ÁÙ - "-" Ãâ·Â
+			// 2ì¤„ - "-" ì¶œë ¥
 			for (int j = 0; j < cr; j++)
 				System.out.print("-");
 
-			// 2ÁÙ - "+-----" Ãâ·Â
+			// 2ì¤„ - "+-----" ì¶œë ¥
 			System.out.print("+-----");
 
 			for (int j = 0; j < cx + ncx; j++)
@@ -140,33 +140,33 @@ public class Exam4 {
 			System.out.println();				
 		}
 
-		System.out.print(r + "Áø¼ö·Î ");
+		System.out.print(r + "ì§„ìˆ˜ë¡œ ");
 		for (int i = 0; i < digits; i++) {
 			System.out.print(d[i]);
 		}
-		System.out.println(" ÀÔ´Ï´Ù.");
+		System.out.println(" ì…ë‹ˆë‹¤.");
 	}
 }
 
 /*
- * ¿¬½À¹®Á¦
+ * ì—°ìŠµë¬¸ì œ
  * 
- * Q6. ¹è¿­ÀÇ ¾ÕÂÊ¿¡ ¾Æ·§ÀÚ¸®°¡ ¾Æ´Ñ À­ÀÚ¸®¸¦ ³Ö¾îµÎ´Â ¸Ş¼­µå¸¦ ÀÛ¼ºÇÏ¼¼¿ä.
+ * Q6. ë°°ì—´ì˜ ì•ìª½ì— ì•„ë«ìë¦¬ê°€ ì•„ë‹Œ ìœ—ìë¦¬ë¥¼ ë„£ì–´ë‘ëŠ” ë©”ì„œë“œë¥¼ ì‘ì„±í•˜ì„¸ìš”.
  *     static int cardConv(int x, int r, char[] d)
  *     
- * Q7. ¾Æ·¡ÂÊÃ³·³ ±â¼ö º¯È¯ °úÁ¤À» ÀÚ¼¼È÷ ³ªÅ¸³»´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
+ * Q7. ì•„ë˜ìª½ì²˜ëŸ¼ ê¸°ìˆ˜ ë³€í™˜ ê³¼ì •ì„ ìì„¸íˆ ë‚˜íƒ€ë‚´ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì„¸ìš”.
  *     2|     59
  *     -+-------
- *     2|     29  ¡¦ 1
+ *     2|     29  â€¦ 1
  *     -+---------
- *     2|     14  ¡¦ 1
+ *     2|     14  â€¦ 1
  *     -+---------
- *     2|      7  ¡¦ 0
+ *     2|      7  â€¦ 0
  *     -+--------
- *     2|      3  ¡¦ 1
+ *     2|      3  â€¦ 1
  *     -+--------
- *     2|      1  ¡¦ 1
+ *     2|      1  â€¦ 1
  *     -+--------
- *             0  ¡¦ 1
- *     2Áø¼ö·Î 111011 ÀÔ´Ï´Ù.
+ *             0  â€¦ 1
+ *     2ì§„ìˆ˜ë¡œ 111011 ì…ë‹ˆë‹¤.
  */

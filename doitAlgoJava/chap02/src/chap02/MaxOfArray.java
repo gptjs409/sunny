@@ -2,17 +2,17 @@ package chap02;
 
 import java.util.Scanner;
 
-// ¹è¿­ ¿ä¼ÒÀÇ ÃÖ´ñ°ªÀ» ³ªÅ¸³À´Ï´Ù(°ªÀ» ÀÔ·Â¹ŞÀ½)
+// ë°°ì—´ ìš”ì†Œì˜ ìµœëŒ“ê°’ì„ ë‚˜íƒ€ëƒ…ë‹ˆë‹¤(ê°’ì„ ì…ë ¥ë°›ìŒ)
 public class MaxOfArray {
 	
 	public static void main(String[] args) {
 		Scanner stdIn = new Scanner(System.in);
 		
-		System.out.println("Å°ÀÇ ÃÖ´ñ°ªÀ» ±¸ÇÕ´Ï´Ù.");
-		System.out.print("»ç¶÷ ¼ö : ");
-		int num = stdIn.nextInt();  // ¹è¿­ÀÇ ¿ä¼Ò¼ö¸¦ ÀÔ·Â
+		System.out.println("í‚¤ì˜ ìµœëŒ“ê°’ì„ êµ¬í•©ë‹ˆë‹¤.");
+		System.out.print("ì‚¬ëŒ ìˆ˜ : ");
+		int num = stdIn.nextInt();  // ë°°ì—´ì˜ ìš”ì†Œìˆ˜ë¥¼ ì…ë ¥
 		
-		int[] height = new int[num]; // ¿ä¼Ò¼ö°¡ numÀÎ ¹è¿­ »ı¼º
+		int[] height = new int[num]; // ìš”ì†Œìˆ˜ê°€ numì¸ ë°°ì—´ ìƒì„±
 		
 		for (int i = 0; i < num; i++) {
 			System.out.print("heigh[" + i + "] : ");
@@ -21,19 +21,19 @@ public class MaxOfArray {
 		
 		stdIn.close();
 		
-		System.out.println("ÃÖ´ñ°ªÀº " + maxOf(height) + "ÀÔ´Ï´Ù.");
+		System.out.println("ìµœëŒ“ê°’ì€ " + maxOf(height) + "ì…ë‹ˆë‹¤.");
 	}
 	/*
-	 * Å°ÀÇ ÃÖ´ñ°ªÀ» ±¸ÇÕ´Ï´Ù.
-	 * »ç¶÷ ¼ö : 4
+	 * í‚¤ì˜ ìµœëŒ“ê°’ì„ êµ¬í•©ë‹ˆë‹¤.
+	 * ì‚¬ëŒ ìˆ˜ : 4
 	 * heigh[0] : 1
 	 * heigh[1] : 5
 	 * heigh[2] : 6
 	 * heigh[3] : 5
-	 * ÃÖ´ñ°ªÀº 6ÀÔ´Ï´Ù.
+	 * ìµœëŒ“ê°’ì€ 6ì…ë‹ˆë‹¤.
 	 */
 
-	// ¹è¿­ aÀÇ ÃÖ´ñ°ªÀ» ±¸ÇÏ¿© ¹İÈ¯ÇÕ´Ï´Ù.
+	// ë°°ì—´ aì˜ ìµœëŒ“ê°’ì„ êµ¬í•˜ì—¬ ë°˜í™˜í•©ë‹ˆë‹¤.
 	static int maxOf(int[] a) {
 		int max = a[0];
 		for (int i = 1; i < a.length; i++) {

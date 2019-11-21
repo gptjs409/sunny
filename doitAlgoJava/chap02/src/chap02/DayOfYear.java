@@ -2,50 +2,50 @@ package chap02;
 
 import java.util.Scanner;
 
-// ±× ÇØÀÇ °æ°ú ÀÏ ¼ö¸¦ ±¸ÇÔ
+// ê·¸ í•´ì˜ ê²½ê³¼ ì¼ ìˆ˜ë¥¼ êµ¬í•¨
 public class DayOfYear {
 	
-	// °¢ ´ŞÀÇ ÀÏ ¼ö
+	// ê° ë‹¬ì˜ ì¼ ìˆ˜
 	static int[][] mdays = {
-			{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}, // Æò³â
-			{31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}, // À±³â
+			{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}, // í‰ë…„
+			{31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}, // ìœ¤ë…„
 	};
 
 	public static void main(String[] args) {
 		Scanner stdIn = new Scanner(System.in);
-		int retry;			// ´Ù½Ã ÇÑ ¹ø?
+		int retry;			// ë‹¤ì‹œ í•œ ë²ˆ?
 		
-		System.out.println("±× ÇØ °æ°úÀÏ¼ö¸¦ ±¸ÇÕ´Ï´Ù.");
+		System.out.println("ê·¸ í•´ ê²½ê³¼ì¼ìˆ˜ë¥¼ êµ¬í•©ë‹ˆë‹¤.");
 		
 		do {
-			System.out.print("³â : ");
-			int year = stdIn.nextInt();  // ³â
-			System.out.print("¿ù : ");
-			int month = stdIn.nextInt(); // ¿ù
-			System.out.print("ÀÏ : ");
-			int day = stdIn.nextInt();   // ÀÏ
+			System.out.print("ë…„ : ");
+			int year = stdIn.nextInt();  // ë…„
+			System.out.print("ì›” : ");
+			int month = stdIn.nextInt(); // ì›”
+			System.out.print("ì¼ : ");
+			int day = stdIn.nextInt();   // ì¼
 			
-			System.out.printf("±× ÇØ %dÀÏÂ°ÀÔ´Ï´Ù.\n", dayOfYear(year, month, day));
+			System.out.printf("ê·¸ í•´ %dì¼ì§¸ì…ë‹ˆë‹¤.\n", dayOfYear(year, month, day));
 			
-			System.out.print("ÇÑ ¹ø ´õ ÇÏ·Á¸é 1À» ´©¸£¼¼¿ä : ");
+			System.out.print("í•œ ë²ˆ ë” í•˜ë ¤ë©´ 1ì„ ëˆ„ë¥´ì„¸ìš” : ");
 			retry = stdIn.nextInt();
 		} while (retry == 1);
 		
 		stdIn.close();
 	}
 	
-	// ¼­±â year³âÀº À±³âÀÎ°¡? (À±³â : 1 / Æò³â : 0)
-	// À±³â : 4·Î ³ª´µ¾îÁö´Â ÇØ, 100À¸·Î ³ª´²Áö´Âµ¥ 400À¸·Î ³ª´²ÁöÁö ¾Ê´Â ÇØ´Â Æò³â(100, 200, 300, 500)
+	// ì„œê¸° yearë…„ì€ ìœ¤ë…„ì¸ê°€? (ìœ¤ë…„ : 1 / í‰ë…„ : 0)
+	// ìœ¤ë…„ : 4ë¡œ ë‚˜ë‰˜ì–´ì§€ëŠ” í•´, 100ìœ¼ë¡œ ë‚˜ëˆ ì§€ëŠ”ë° 400ìœ¼ë¡œ ë‚˜ëˆ ì§€ì§€ ì•ŠëŠ” í•´ëŠ” í‰ë…„(100, 200, 300, 500)
 	static int isLeap(int year) {
 		return (year % 4 == 0 && year % 100 != 100 || year % 400 == 0) ? 1 : 0;
 	}
 	
-	// ¼­±â y³â m¿ù dÀÏÀÇ ±× ÇØ °æ°ú ÀÏ ¼ö¸¦ ±¸ÇÔ
+	// ì„œê¸° yë…„ mì›” dì¼ì˜ ê·¸ í•´ ê²½ê³¼ ì¼ ìˆ˜ë¥¼ êµ¬í•¨
 	static int dayOfYear(int y, int m, int d) {
-		int days = d;						 // ÀÏ ¼ö
+		int days = d;						 // ì¼ ìˆ˜
 		
-		for (int i = 1; i < m; i++)			 // 1¿ù~(m-1)¿ùÀÇ ÀÏ ¼ö¸¦ ´õÇÔ
-			days += mdays[isLeap(y)][i - 1]; //isLeap(y) : À±³âÀÌ¸é 1 / Æò³âÀÌ¸é 0 
+		for (int i = 1; i < m; i++)			 // 1ì›”~(m-1)ì›”ì˜ ì¼ ìˆ˜ë¥¼ ë”í•¨
+			days += mdays[isLeap(y)][i - 1]; //isLeap(y) : ìœ¤ë…„ì´ë©´ 1 / í‰ë…„ì´ë©´ 0 
 		return days;
 	}
 

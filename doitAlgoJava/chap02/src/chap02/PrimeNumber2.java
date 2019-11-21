@@ -1,30 +1,30 @@
 package chap02;
 
-// 1,000 ÀÌÇÏÀÇ ¼Ò¼ö¸¦ ¿­°Å (¹öÀü 2)
+// 1,000 ì´í•˜ì˜ ì†Œìˆ˜ë¥¼ ì—´ê±° (ë²„ì „ 2)
 public class PrimeNumber2 {
 
 	public static void main(String[] args) {
-		int counter = 0; 					 // ³ª´°¼ÀÀÇ È½¼ö
-		int ptr = 0;						 // Ã£Àº ¼Ò¼öÀÇ °³¼ö
-		int[] prime = new int[500]; 		 // ¼Ò¼ö¸¦ ÀúÀåÇÏ´Â ¹è¿­
+		int counter = 0; 					 // ë‚˜ëˆ—ì…ˆì˜ íšŸìˆ˜
+		int ptr = 0;						 // ì°¾ì€ ì†Œìˆ˜ì˜ ê°œìˆ˜
+		int[] prime = new int[500]; 		 // ì†Œìˆ˜ë¥¼ ì €ì¥í•˜ëŠ” ë°°ì—´
 		
-		prime[ptr++] = 2;					 // 2´Â ¼Ò¼öÀÓ
+		prime[ptr++] = 2;					 // 2ëŠ” ì†Œìˆ˜ì„
 		
-		for (int n = 3; n <= 1000; n += 2) { // ´ë»óÀº È¦¼ö¸¸
+		for (int n = 3; n <= 1000; n += 2) { // ëŒ€ìƒì€ í™€ìˆ˜ë§Œ
 			int i;
-			for (i = 1; i < ptr; i++) {	     // ÀÌ¹Ì Ã£Àº ¼Ò¼ö·Î ³ª´²º¸±â
+			for (i = 1; i < ptr; i++) {	     // ì´ë¯¸ ì°¾ì€ ì†Œìˆ˜ë¡œ ë‚˜ëˆ ë³´ê¸°
 				counter++;
-				if (n % prime[i] == 0)		 // ³ª´²Áö¸é ¼Ò¼ö°¡ ¾Æ´Ô
-					break;					 // Å»Ãâ
+				if (n % prime[i] == 0)		 // ë‚˜ëˆ ì§€ë©´ ì†Œìˆ˜ê°€ ì•„ë‹˜
+					break;					 // íƒˆì¶œ
 			}
-			if (ptr == i)					 // ¸¶Áö¸·±îÁö ¾È³ª´²Áö¸é
-				prime[ptr++] = n;			 // ¼Ò¼ö´Ï±î ¹è¿­¿¡ ÀúÀå
+			if (ptr == i)					 // ë§ˆì§€ë§‰ê¹Œì§€ ì•ˆë‚˜ëˆ ì§€ë©´
+				prime[ptr++] = n;			 // ì†Œìˆ˜ë‹ˆê¹Œ ë°°ì—´ì— ì €ì¥
 		}
 		
-		for (int i = 0; i < ptr; i++)		 // Ã£Àº ptr°³ÀÇ ¼Ò¼ö¸¦ ³ªÅ¸³¿
+		for (int i = 0; i < ptr; i++)		 // ì°¾ì€ ptrê°œì˜ ì†Œìˆ˜ë¥¼ ë‚˜íƒ€ëƒ„
 			System.out.println(prime[i]);
 		
-		System.out.println("³ª´°¼ÀÀ» ¼öÇàÇÑ È½¼ö : " + counter);
+		System.out.println("ë‚˜ëˆ—ì…ˆì„ ìˆ˜í–‰í•œ íšŸìˆ˜ : " + counter);
 	}
 
 }

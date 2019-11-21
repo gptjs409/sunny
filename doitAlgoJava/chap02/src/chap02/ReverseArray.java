@@ -2,16 +2,16 @@ package chap02;
 
 import java.util.Scanner;
 
-// ¹è¿­ ¿ä¼Ò¿¡ °ªÀ» ÀĞ¾î µé¿© ¿ª¼øÀ¸·Î Á¤·Ä
+// ë°°ì—´ ìš”ì†Œì— ê°’ì„ ì½ì–´ ë“¤ì—¬ ì—­ìˆœìœ¼ë¡œ ì •ë ¬
 public class ReverseArray {
 
 	public static void main(String[] args) {
 		Scanner stdIn = new Scanner(System.in);
 		
-		System.out.print("¿ä¼Ò¼ö : ");
-		int num = stdIn.nextInt(); // ¿ä¼Ò¼ö
+		System.out.print("ìš”ì†Œìˆ˜ : ");
+		int num = stdIn.nextInt(); // ìš”ì†Œìˆ˜
 		
-		int[] x = new int[num]; // ¿ä¼Ò¼ö°¡ numÀÎ ¹è¿­
+		int[] x = new int[num]; // ìš”ì†Œìˆ˜ê°€ numì¸ ë°°ì—´
 		
 		for (int i = 0; i < num; i++) {
 			System.out.print("x[" + i + "] : ");
@@ -19,21 +19,21 @@ public class ReverseArray {
 		}
 		
 		stdIn.close();
-		reverse(x); // ¹è¿­ xÀÇ ¿ä¼Ò¸¦ ¿ª¼øÀ¸·Î Á¤·Ä
+		reverse(x); // ë°°ì—´ xì˜ ìš”ì†Œë¥¼ ì—­ìˆœìœ¼ë¡œ ì •ë ¬
 		
-		System.out.println("¿ä¼Ò¸¦ ¿ª¼øÀ¸·Î Á¤·ÄÇß½À´Ï´Ù.");
+		System.out.println("ìš”ì†Œë¥¼ ì—­ìˆœìœ¼ë¡œ ì •ë ¬í–ˆìŠµë‹ˆë‹¤.");
 		for (int i = 0 ; i < num; i++)
 			System.out.println("x[" + i + "] = " + x[i]);
 	}
 	
-	// ¹è¿­ ¿ä¼Ò a[idx1]°ú a[idx2]ÀÇ °ªÀ» ¹Ù²Ş
+	// ë°°ì—´ ìš”ì†Œ a[idx1]ê³¼ a[idx2]ì˜ ê°’ì„ ë°”ê¿ˆ
 	static void swap(int[] a, int idx1, int idx2) {
 		int t = a[idx1];
 		a[idx1] = a[idx2];
 		a[idx2] = t;
 	}
 	
-	// ¹è¿­ aÀÇ ¿ä¼Ò¸¦ ¿ª¼øÀ¸·Î Á¤·Ä
+	// ë°°ì—´ aì˜ ìš”ì†Œë¥¼ ì—­ìˆœìœ¼ë¡œ ì •ë ¬
 	static void reverse(int[] a) {
 		for (int i = 0; i < a.length / 2; i++) {
 			swap(a, i, a.length -i -1);

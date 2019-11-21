@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Exam3 {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in); // Ctrl + Shift + o = ÀÚµ¿ import
+		Scanner sc = new Scanner(System.in); // Ctrl + Shift + o = ìë™ import
 		
-		System.out.print("¹è¿­ÀÇ Å©±â¸¦ Á¤ÇØº¸¼¼¿ä : ");
+		System.out.print("ë°°ì—´ì˜ í¬ê¸°ë¥¼ ì •í•´ë³´ì„¸ìš” : ");
 		int num = sc.nextInt();
 		
 		int a[] = new int[num];
@@ -21,11 +21,11 @@ public class Exam3 {
 		
 		abprint(a, b);
 		
-		System.out.println("¹è¿­ b¸¦ ¹è¿­ a¿¡ º¹»çÇÏ´Â ¸Ş¼­µå copy ½ÇÇà");
+		System.out.println("ë°°ì—´ bë¥¼ ë°°ì—´ aì— ë³µì‚¬í•˜ëŠ” ë©”ì„œë“œ copy ì‹¤í–‰");
 		copy(a, b);
 		abprint(a, b);
 		
-		System.out.println("¹è¿­ b¸¦ ¹è¿­ a¿¡ ¿ª¼øÀ¸·Î º¹»çÇÏ´Â ¸Ş¼­µå rcopy ½ÇÇà");
+		System.out.println("ë°°ì—´ bë¥¼ ë°°ì—´ aì— ì—­ìˆœìœ¼ë¡œ ë³µì‚¬í•˜ëŠ” ë©”ì„œë“œ rcopy ì‹¤í–‰");
 		rcopy(a, b);
 		abprint(a, b);
 	}
@@ -41,12 +41,12 @@ public class Exam3 {
 	}
 	
 	static void abprint(int[] a, int[] b) {
-		System.out.print("¹è¿­ a´Â ");
+		System.out.print("ë°°ì—´ aëŠ” ");
 		for (int i : a) {
 			System.out.print(i + " ");
 		}
 		
-		System.out.print("\n¹è¿­ b´Â ");
+		System.out.print("\në°°ì—´ bëŠ” ");
 		for (int i : b) {
 			System.out.print(i + " ");
 		}
@@ -57,11 +57,11 @@ public class Exam3 {
 }
 
 /*
- * ¿¬½À¹®Á¦
+ * ì—°ìŠµë¬¸ì œ
  * 
- * Q4. ¹è¿­ bÀÇ ¸ğµç ¿ä¼Ò¸¦ ¹è¿­ a¿¡ º¹»çÇÏ´Â ¸Ş¼­µå copy¸¦ ÀÛ¼ºÇÏ¼¼¿ä.
+ * Q4. ë°°ì—´ bì˜ ëª¨ë“  ìš”ì†Œë¥¼ ë°°ì—´ aì— ë³µì‚¬í•˜ëŠ” ë©”ì„œë“œ copyë¥¼ ì‘ì„±í•˜ì„¸ìš”.
  * static void copy(int[] a, int[] b)
  * 
- * Q5. ¹è¿­ bÀÇ ¸ğµç ¿ä¼Ò¸¦ ¹è¿­ a¿¡ ¿ª¼øÀ¸·Î º¹»çÇÏ´Â ¸Ş¼­µå rcopy¸¦ ÀÛ¼ºÇÏ¼¼¿ä.
+ * Q5. ë°°ì—´ bì˜ ëª¨ë“  ìš”ì†Œë¥¼ ë°°ì—´ aì— ì—­ìˆœìœ¼ë¡œ ë³µì‚¬í•˜ëŠ” ë©”ì„œë“œ rcopyë¥¼ ì‘ì„±í•˜ì„¸ìš”.
  * static void rcopy(int[] a, int[] b)
  */

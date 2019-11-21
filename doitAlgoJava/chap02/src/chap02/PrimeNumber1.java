@@ -1,23 +1,23 @@
 package chap02;
 
-// 1,000 ÀÌÇÏÀÇ ¼Ò¼ö¸¦ ¿­°Å(¹öÀü 1)
+// 1,000 ì´í•˜ì˜ ì†Œìˆ˜ë¥¼ ì—´ê±°(ë²„ì „ 1)
 public class PrimeNumber1 {
 
 	public static void main(String[] args) {
-		int counter = 0; // ³ª´°¼ÀÀÇ È½¼ö
+		int counter = 0; // ë‚˜ëˆ—ì…ˆì˜ íšŸìˆ˜
 		
 		for (int n = 2; n <= 1000; n++) {
 			int i;
 			for (i = 2; i < n; i++) {
 				counter++;
-				if (n % i == 0)			// ³ª´©¾î ¶³¾îÁö¸é ¼Ò¼ö°¡ ¾Æ´Ô
-					break;				// ´õ ÀÌ»ó ¹İº¹ ºÒÇÊ¿ä
+				if (n % i == 0)			// ë‚˜ëˆ„ì–´ ë–¨ì–´ì§€ë©´ ì†Œìˆ˜ê°€ ì•„ë‹˜
+					break;				// ë” ì´ìƒ ë°˜ë³µ ë¶ˆí•„ìš”
 			}
-			if (n == i)					// ¸¶Áö¸·±îÁö ³ª´©¾î¶³¾îÁöÁö ¾ÊÀº ¼ö
+			if (n == i)					// ë§ˆì§€ë§‰ê¹Œì§€ ë‚˜ëˆ„ì–´ë–¨ì–´ì§€ì§€ ì•Šì€ ìˆ˜
 				System.out.println(n);
 		}
 		
-		System.out.println("³ª´°¼ÀÀ» ¼öÇàÇÑ È½¼ö : " + counter);
+		System.out.println("ë‚˜ëˆ—ì…ˆì„ ìˆ˜í–‰í•œ íšŸìˆ˜ : " + counter);
 	}
 
 }

@@ -1,14 +1,14 @@
 package chap02;
 
-// ¹è¿­À» º¹Á¦ÇÕ´Ï´Ù.
-// º¹Á¦ : ¹è¿­ÀÌ¸§.clone()
+// ë°°ì—´ì„ ë³µì œí•©ë‹ˆë‹¤.
+// ë³µì œ : ë°°ì—´ì´ë¦„.clone()
 public class CloneArray {
 
 	public static void main(String[] args) {
 		int[] a = {1, 2, 3, 4, 5};
-		int[] b = a.clone();       // b´Â aÀÇ qhrwpfmf ckawh
+		int[] b = a.clone();       // bëŠ” aì˜ qhrwpfmf ckawh
 		
-		b[3] = 0; // ÇÑ ¿ä¼Ò¿¡¸¸ 0À» ´ëÀÔ
+		b[3] = 0; // í•œ ìš”ì†Œì—ë§Œ 0ì„ ëŒ€ì…
 		
 		System.out.print("a = ");
 		for (int i : a)

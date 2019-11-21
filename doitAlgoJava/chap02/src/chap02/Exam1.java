@@ -6,26 +6,26 @@ public class Exam1 {
 
 	public static void main(String[] args) {
 		
-		// Random »ç¿ë ¼±¾ğ
+		// Random ì‚¬ìš© ì„ ì–¸
 		Random rand = new Random();
 		
-		System.out.println("Å°ÀÇ ÃÖ´ñ°ªÀ» ±¸ÇÕ´Ï´Ù.");
-		System.out.print("»ç¶÷ ¼ö : ");
-		int num = rand.nextInt(100); // ¹è¿­ÀÇ ¿ä¼Ò¼ö
+		System.out.println("í‚¤ì˜ ìµœëŒ“ê°’ì„ êµ¬í•©ë‹ˆë‹¤.");
+		System.out.print("ì‚¬ëŒ ìˆ˜ : ");
+		int num = rand.nextInt(100); // ë°°ì—´ì˜ ìš”ì†Œìˆ˜
 		
-		int[] height = new int[num]; // ¿ä¼Ò¼ö°¡ numÀÎ ¹è¿­ »ı¼º
+		int[] height = new int[num]; // ìš”ì†Œìˆ˜ê°€ numì¸ ë°°ì—´ ìƒì„±
 		
-		System.out.println("Å° °ªÀº ¾Æ·¡¿Í °°½À´Ï´Ù.");
+		System.out.println("í‚¤ ê°’ì€ ì•„ë˜ì™€ ê°™ìŠµë‹ˆë‹¤.");
 		for (int i = 0; i < num; i++) {
-			// rand.nextInt(n) ¡æ ³­¼ö¸¦ »ı¼ºÇÏ´Â ¸Ş¼­µå, 0 ~ n - 1±îÁöÀÇ ³­¼ö¸¦ ¹İÈ¯
-			height[i] = 100 + rand.nextInt(90); // ¿ä¼ÒÀÇ °ªÀ» ³­¼ö·Î °áÁ¤
+			// rand.nextInt(n) â†’ ë‚œìˆ˜ë¥¼ ìƒì„±í•˜ëŠ” ë©”ì„œë“œ, 0 ~ n - 1ê¹Œì§€ì˜ ë‚œìˆ˜ë¥¼ ë°˜í™˜
+			height[i] = 100 + rand.nextInt(90); // ìš”ì†Œì˜ ê°’ì„ ë‚œìˆ˜ë¡œ ê²°ì •
 			System.out.println("height[" + i + "] : " + height[i]);
 		}
 		
-		System.out.println("ÃÖ´ñ°ªÀº " + maxOf(height) + "ÀÔ´Ï´Ù.");
+		System.out.println("ìµœëŒ“ê°’ì€ " + maxOf(height) + "ì…ë‹ˆë‹¤.");
 	}
 
-	// ¹è¿­ aÀÇ ÃÖ´ñ°ªÀ» ±¸ÇÏ¿© ¹İÈ¯
+	// ë°°ì—´ aì˜ ìµœëŒ“ê°’ì„ êµ¬í•˜ì—¬ ë°˜í™˜
 	static int maxOf(int [] a) {
 		int max = a[0];
 		for (int i = 1; i < a.length; i++)
@@ -37,7 +37,7 @@ public class Exam1 {
 }
 
 /*
- * ¿¬½À¹®Á¦
+ * ì—°ìŠµë¬¸ì œ
  * 
- * Q1. Å° »Ó¸¸ ¾Æ´Ï¶ó »ç¶÷ ¼öµµ ³­¼ö·Î »ı¼ºÇÏµµ·Ï MaxOfArrayRand Class¸¦ ¼öÁ¤ÇÏ¿© ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
+ * Q1. í‚¤ ë¿ë§Œ ì•„ë‹ˆë¼ ì‚¬ëŒ ìˆ˜ë„ ë‚œìˆ˜ë¡œ ìƒì„±í•˜ë„ë¡ MaxOfArrayRand Classë¥¼ ìˆ˜ì •í•˜ì—¬ í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì„¸ìš”.
  */
