@@ -25,7 +25,8 @@ public class Exam5 {
 			int day = stdIn.nextInt();   // 일
 			
 			System.out.printf("그 해 %d일째입니다.\n", dayOfYear(year, month, day));
-			
+			System.out.printf("그 해는 %d일 남았습다.\n", leftDayOfYear(year, month, day));
+
 			System.out.print("한 번 더 하려면 1을 누르세요 : ");
 			retry = stdIn.nextInt();
 		} while (retry == 1);
@@ -39,16 +40,27 @@ public class Exam5 {
 		return (year % 4 == 0 && year % 100 != 100 || year % 400 == 0) ? 1 : 0;
 	}
 	
-//	// 서기 y년 m월 d일의 그 해 경과 일 수를 구함
-//	static int dayOfYear(int y, int m, int d) {
-//		int tmp = m;
-//		while (tmp > 1) {
-//			d += mdays[isLeap(y)][m]; //isLeap(y) : 윤년이면 1 / 평년이면 0
-//			tmp--;
-//		}
-//		return d;
-//	}
+	// 서기 y년 m월 d일의 그 해 경과 일 수를 구함
+	static int dayOfYear(int y, int m, int d) {
+		while (--m != 0)
+			d += mdays[isLeap(y)][m - 1];
+		return d;
+	}
 	
+	// 그 해 남은 일 수를 구
+	static int leftDayOfYear(int y, int m, int d) {
+		int total = 0;
+		
+		while (--m != 0)
+			d += mdays[isLeap(y)][m - 1];
+		
+		if (isLeap(y) == 1)
+			total = 366;
+		else
+			total = 365;
+		
+		return total - d;	
+	}
 }
 
 /*
@@ -57,5 +69,5 @@ public class Exam5 {
  * Q8. DayOfYear 클래스의 메서드 dayOfYear를 변수 i와 days 없이 구현하세요. while문을 사용하세요.
  * 
  * Q9. y년 m월 d일의 그 해 남은 일 수(12월 31일이면 0, 12월 30일이면 1)을 구하는 아래 메서드를 작성하세요.
- *     static int leftDayOfYear(int y, int m, int d);
+ *     static int leftDayOfYear(int y, int m, int d)
  */
